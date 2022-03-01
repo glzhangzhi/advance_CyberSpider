@@ -85,3 +85,22 @@ def test_mpu_data():
         print(f'X:{x} Y:{y} Z:{z}')
         time.sleep(0.3)
 
+def ctrl_range(value, max, min):
+    '''control the value not out of range
+
+    Args:
+        value (float): target value
+        max (float): upper boundary of value
+        min (float): down boundary of value
+
+    Returns:
+        float: output value, which is in range of (min, max)
+    '''
+    if value > max:
+        output = max
+    elif value < min:
+        output = min
+    else:
+        output = value
+    return output
+
